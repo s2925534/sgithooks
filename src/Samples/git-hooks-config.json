@@ -1,0 +1,12 @@
+{
+  "commitMessage": {
+    "enabled": true,
+    "validationRegex": "[0-9]{7,7}: [0-9a-zA-Z]{6,150}",
+    "warningMessage": null
+  },
+  "preCommit": {
+    "enabled": true,
+    "validationRegex": "^(feature|bugfix|improvement|library|prerelease|release|hotfix)\\/[a-z0-9._-]+$",
+    "warningMessage": null
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "s2925534/sgithooks",
+  "description": "PHP wrapped pre-commit and commit message validation.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Πέτρος",
+      "email": "it.specialist@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "SGitHooks": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "require": {
+    "php": ">=5.3"
+  },
+  "require-dev": {
+  }
+}
