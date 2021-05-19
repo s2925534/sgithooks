@@ -29,11 +29,11 @@ class PreCom extends Helper
 
             $config = ConfigSetup::getConfig();
 
-            if (!$config['commitMessage']['enabled']) {
-                throw new Exception('Commit message check not enabled.');
+            if (!$config['preCommit']['enabled']) {
+                throw new Exception('Pre-Commit check not enabled.');
             }
 
-            $validationRegex = "^(feature|bugfix|improvement|library|prerelease|release|hotfix)\/[a-z0-9._-]+$";
+            $validationRegex = $config['preCommit']['validationRegex'];
 
             // Format: "feature/1234567-some-description"
             $stringToValidate = shell_exec('git branch --show-current');

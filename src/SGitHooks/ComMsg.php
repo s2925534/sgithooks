@@ -36,12 +36,12 @@ class ComMsg extends Helper
                 echo "\nCommit message check not enabled.\n";
             } else {
 
-                $validationRegex = "[0-9]{7,7}: [0-9a-zA-Z]{6,150}";
+                $validationRegex = $config['commitMessage']['validationRegex'];
                 array_map(function ($stringToValidate) use (&$validationRegex) {
 
                     if (!(preg_match("/$validationRegex/", $stringToValidate, $matches))) {
-                        $message = "There is something wrong with your branch name. Branch names in this project must adhere to this contract:
-     $validationRegex. Your commit will be rejected. You should rename your branch to a valid name and try again.";
+                        $message = "There is something wrong with your commit message. Commit messages in this project must adhere to this contract:
+     $validationRegex. Your commit will be rejected. You should change the commit message to a valid one and try again.";
                         echo "\n$message\n";
                         echo "\nMessage used        $stringToValidate\n";
                         echo "\nRequired pattern    $validationRegex\n";
